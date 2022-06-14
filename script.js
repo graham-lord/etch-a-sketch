@@ -9,6 +9,12 @@ btn.addEventListener('click', () => {
   rows = parseInt(prompt('A NUMBER!', 10));
   cols = rows;
   makeGrid(rows, cols);
+  const gridItems = document.querySelectorAll('.grid-item');
+  gridItems.forEach(gridItem => {
+    gridItem.addEventListener('mouseover', (e) => {
+      gridItem.style.backgroundColor = 'lightblue';
+    });
+  });
 });
 
 
@@ -23,10 +29,5 @@ function makeGrid(r, c) {
 }
 
 
-const gridItems = document.querySelectorAll('.grid-item');
-gridItems.forEach(gridItem => {
-  gridItem.addEventListener('mouseover', (e) => {
-    gridItem.style.backgroundColor = 'lightblue';
-  });
-});
+
 
